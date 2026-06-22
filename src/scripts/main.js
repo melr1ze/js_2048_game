@@ -66,15 +66,19 @@ gameButton.addEventListener('click', () => {
     if (messageStart) {
       messageStart.classList.add('hidden');
     }
+    updateUI();
   } else {
     game.initEmptyBoard();
+    game.score = 0;
+    game.status = 'idle';
+
     gameButton.textContent = 'Start';
 
     if (messageStart) {
       messageStart.classList.remove('hidden');
     }
+    updateUI();
   }
-  updateUI();
 });
 
 document.addEventListener('keydown', (e) => {
